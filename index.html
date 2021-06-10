@@ -7,6 +7,26 @@
 <script>
 function myFunction() {
   alert("Page is loaded");
+  
+  const urlParams = new URLSearchParams(window.location.search);
+	const url = urlParams.get('url');
+	const vms = urlParams.get('vms');
+	alert(vms)
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.send(JSON.stringify({
+		vms: vms
+	}));
+	xhr.onload = function() {
+	  console.log("HELLO")
+	  console.log(this.responseText);
+	  var data = JSON.parse(this.responseText);
+	  console.log(data);
+	}
+
+
 }
 </script>
 
