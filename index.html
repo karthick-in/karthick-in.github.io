@@ -1,35 +1,98 @@
 <!DOCTYPE html>
-<html>
-<body onload="myFunction()">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Apps</title>
+    <style>
+        :root {
+            --bg-color: #15202b;
+            --text-color: #f5f8fa;
+            --card-bg: #192734;
+            --card-hover: #22303c;
+            --border-color: #38444d;
+            --accent-color: #ffffff;
+            --muted-color: #8899a6;
+        }
 
-<h1>Testing site</h1>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 24px;
+            box-sizing: border-box;
+        }
 
-<script>
-function myFunction() {
-  	// alert("Page is loaded");
-  
-	// POST request
-	/* const urlParams = new URLSearchParams(window.location.search);
-	const url = urlParams.get('url');
-	const vms = urlParams.get('vms');
-	alert(vms)
+        .container {
+            max-width: 440px;
+            width: 100%;
+        }
 
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.send(JSON.stringify({
-		vms: vms
-	}));
-	xhr.onload = function() {
-		console.log("HELLO")
-		console.log(this.responseText);
-		var data = JSON.parse(this.responseText);
-		console.log(data);
-	} */
+        h1 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: var(--muted-color);
+            letter-spacing: -0.01em;
+        }
 
+        .app-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-}
-</script>
+        .app-card {
+            display: flex;
+            flex-direction: column;
+            padding: 18px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .app-card:hover {
+            background-color: var(--card-hover);
+            border-color: var(--accent-color);
+            transform: translateY(-1px);
+        }
+
+        .app-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .app-desc {
+            font-size: 0.9rem;
+            color: var(--muted-color);
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Check out the following apps:</h1>
+        
+        <div class="app-list">
+            <!-- App Card Start -->
+            <a href="kountem/" class="app-card" target="_blank">
+                <div class="app-name">Kountem</div>
+                <div class="app-desc">Kountem is a simple cross-platform mobile app built with React Native and Expo.
+It's designed to help users track item quantities during group orders (e.g., when ordering food with friends) through a clean interface for adding items and adjusting counts.</div>
+            </a>
+            <!-- App Card End -->
+        </div>
+    </div>
 
 </body>
 </html>
