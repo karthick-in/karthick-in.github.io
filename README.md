@@ -1,3 +1,3 @@
-# Apps
+# README
 
-[check](https://karthick-in.github.io/)
+[Visit] (https://karthick-in.github.io/)
